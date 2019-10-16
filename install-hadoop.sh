@@ -7,7 +7,7 @@ echo "*   Hadoop Cluster Setup   *"
 echo "****************************"
 
 # Adding hosts
-echo $HADOOP_USER_PASSWORD | sudo -S cat conf/hosts >> /etc/hosts
+echo $HADOOP_USER_PASSWORD | sudo -S bash -c 'cat conf/hosts >> /etc/hosts'
 
 # Configuring SSH
 echo "Enabling SSH paswordless connection..."
@@ -28,14 +28,14 @@ echo $HADOOP_USER_PASSWORD | sudo -S apt install openjdk-8-jdk-headless -y
 
 # Installing Hadoop 3.2.1
 echo "Installing Hadoop..."
-wget https://www.apache.org/dyn/closer.cgi/hadoop/common/hadoop-3.2.1/hadoop-3.2.1.tar.gz
-tar -xzf hadoop-3.2.1.tar.gz -C /usr/local && rm -rf hadoop-3.2.1.tar.gz
+wget https://www-eu.apache.org/dist/hadoop/common/hadoop-3.2.1/hadoop-3.2.1.tar.gz
+tar -xzf hadoop-3.2.1.tar.gz -C /usr/local/ && rm -rf hadoop-3.2.1.tar.gz
 
 # Configuring Hadoop
 echo "Configuring Hadoop"
-echo $HADOOP_USER_PASSWORD | sudo -S cat "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >> /usr/local/hadoop-3.2.1/etc/hadoop-env.sh
+echo $HADOOP_USER_PASSWORD | sudo -S bash -c 'echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >> /usr/local/hadoop-3.2.1/etc/hadoop-env.sh'
 echo $HADOOP_USER_PASSWORD | sudo -S cp conf/hadoop/* /usr/local/hadoop-3.2.1/etc/hadoop/
 
 # Updating .bashrc
 echo "Updating .bashrc..."
-echo $HADOOP_USER_PASSWORD | sudo -S cat conf/bashrc >> ~/.bashrc
+echo $HADOOP_USER_PASSWORD | sudo -S bash -c 'cat conf/bashrc >> ~/.bashrc'
