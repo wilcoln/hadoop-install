@@ -1,7 +1,8 @@
 # Procédure d'installation
-Sur chaque noeud du cluster, faire:
+Sur chaque noeud du cluster, faire en tant qu'utilisateur hadoop:
 
 ```
+cd
 wget https://github.com/wilcoln/hadoop-install/archive/master.zip
 unzip master.zip && rm -rf master.zip
 mv hadoop-install-master hadoop-install
