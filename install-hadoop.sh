@@ -28,12 +28,8 @@ echo $HADOOP_USER_PASSWORD | sudo -S apt install openjdk-8-jdk-headless -y
 
 # Installing Hadoop 3.2.1
 echo "Installing Hadoop..."
-cd /usr/local
 wget https://www.apache.org/dyn/closer.cgi/hadoop/common/hadoop-3.2.1/hadoop-3.2.1.tar.gz
-tar -xzf hadoop-3.2.1.tar.gz && rm -rf hadoop-3.2.1.tar.gz
-
-
-cd ~/hadoop-install
+tar -xzf hadoop-3.2.1.tar.gz -C /usr/local && rm -rf hadoop-3.2.1.tar.gz
 
 # Configuring Hadoop
 echo "Configuring Hadoop"
