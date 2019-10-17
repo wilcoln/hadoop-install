@@ -1,9 +1,9 @@
 # Install 
 
 ```
-cd
-wget https://github.com/wilcoln/hadoop-install/archive/master.zip
-unzip master.zip && rm -rf master.zip
+cd && 
+wget https://github.com/wilcoln/hadoop-install/archive/master.zip && 
+unzip master.zip && rm -rf master.zip && 
 mv hadoop-install-master hadoop-install
 ```
 
@@ -15,4 +15,13 @@ mv hadoop-install-master hadoop-install
 # Run
 On all nodes of the cluster, run
 
-`cd  ~/hadoop-install && ./install-hadoop.sh
+`cd  ~/hadoop-install && ./install-hadoop.sh`
+
+# Install and Run with Default
+```
+cd && 
+wget https://github.com/wilcoln/hadoop-install/archive/master.zip && 
+unzip master.zip && rm -rf master.zip && 
+mv hadoop-install-master hadoop-install &&
+cd  ~/hadoop-install && ./install-hadoop.sh
+```
