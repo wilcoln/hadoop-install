@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
+printf "\n"
+
 echo "****************************"
 echo "*   Hadoop Cluster Setup   *"
 echo "****************************"
 
-printf "\n\n"
+printf "\n"
 
 # 0. Loading Variables
 source conf/config.sh
