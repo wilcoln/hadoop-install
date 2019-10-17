@@ -15,4 +15,4 @@ mv hadoop-install-master hadoop-install
 # Run
 On all nodes of the cluster, run
 
-`cd  ~/hadoop-install && ./install-hadoop.sh`
+`cd  ~/hadoop-install && ./install-hadoop.sh
