@@ -2,11 +2,9 @@
 
 printf "\n"
 
-echo "****************************"
-echo "*   Hadoop Cluster Setup   *"
-echo "****************************"
-
-printf "\n"
+echo "*************************************"
+echo "*   Hadoop Cluster Setup (6 steps)  *"
+echo "*************************************"
 
 # 0. Loading Variables
 source conf/config.sh
