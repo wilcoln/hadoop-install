@@ -5,7 +5,7 @@ echo "*   Hadoop Cluster Setup   *"
 echo "****************************"
 
 # 0. Loading Variables
-source config.sh
+source conf/config.sh
 
 # 1. Adding hosts
 echo "1. Adding all hosts to /etc/hosts ..."
