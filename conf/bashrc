@@ -1,5 +1,0 @@
-HADOOP_HOME=/usr/local/hadoop-3.2.1
-PDSH_RCMD_TYPE=ssh
-PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
-JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-export JAVA_HOME
