@@ -50,7 +50,7 @@ printf "<<<< 4. done. \n\n"
 # Configuring Hadoop
 echo ">>>> 5. Configuring Hadoop... <<<<"
 
-echo $HADOOP_USER_PASSWORD | sudo -S bash -c 'source conf/config.sh && echo "export JAVA_HOME=$JAVA_HOME" >> $HADOOP_PARENT_DIR/hadoop-3.2.1/etc/hadoop-env.sh'
+echo $HADOOP_USER_PASSWORD | sudo -S bash -c 'source conf/config.sh && echo "export JAVA_HOME=$JAVA_HOME" >> $HADOOP_PARENT_DIR/hadoop-3.2.1/etc/hadoop/hadoop-env.sh'
 echo $HADOOP_USER_PASSWORD | sudo -S cp conf/hadoop/* $HADOOP_PARENT_DIR/hadoop-3.2.1/etc/hadoop/
 
 printf "<<<< 5. done. \n\n"
