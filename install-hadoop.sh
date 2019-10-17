@@ -16,7 +16,7 @@ echo ">>>> 1. Adding all hosts to /etc/hosts ..."
 
 echo $HADOOP_USER_PASSWORD | sudo -S bash -c 'cat conf/hosts >> /etc/hosts'
 
-printf "<<<< done. \n\n"
+printf "<<<< 1. done. \n\n"
 
 # 2. Configuring SSH
 echo ">>>> 2. Enabling SSH paswordless connection... <<<<"
@@ -29,7 +29,7 @@ do
 	ssh-copy-id $hostname # copy node ssh public key to all nodes in the cluster
 done
 
-printf "<<<< done. \n\n"
+printf "<<<< 2. done. \n\n"
 
 # Installing Java 8
 echo ">>>> 3. Installing Java... <<<<"
@@ -39,13 +39,15 @@ echo $HADOOP_USER_PASSWORD | sudo -S apt update
 echo $HADOOP_USER_PASSWORD | sudo -S apt install openjdk-8-jdk -y
 echo $HADOOP_USER_PASSWORD | sudo -S apt install openjdk-8-jdk-headless -y
 
+printf "<<<< 3. done. \n\n"
+
 # Installing Hadoop 3.2.1
 echo ">>>> 4. Installing Hadoop... <<<<"
 
 wget $HADOOP_ORIGIN
 echo $HADOOP_USER_PASSWORD | sudo -S tar -xzf hadoop-3.2.1.tar.gz -C $HADOOP_PARENT_DIR && rm -rf hadoop-3.2.1.tar.gz
 
-printf "<<<< done. \n\n"
+printf "<<<< 4. done. \n\n"
 
 # Configuring Hadoop
 echo ">>>> 5. Configuring Hadoop... <<<<"
@@ -53,7 +55,7 @@ echo ">>>> 5. Configuring Hadoop... <<<<"
 echo $HADOOP_USER_PASSWORD | sudo -S bash -c 'source conf/config.sh && echo "export JAVA_HOME=$JAVA_HOME" >> $HADOOP_PARENT_DIR/hadoop-3.2.1/etc/hadoop-env.sh'
 echo $HADOOP_USER_PASSWORD | sudo -S cp conf/hadoop/* $HADOOP_PARENT_DIR/hadoop-3.2.1/etc/hadoop/
 
-printf "<<<< done. \n\n"
+printf "<<<< 5. done. \n\n"
 
 # Updating .bashrc
 echo ">>>> 6. Updating .bashrc... <<<<"
@@ -69,4 +71,4 @@ echo $HADOOP_USER_PASSWORD | sudo -S bash -c 'source conf/config.sh && echo "HAD
 echo $HADOOP_USER_PASSWORD | sudo -S bash -c "source conf/config.sh && echo PATH='$'PATH:'$'HADOOP_HOME/bin:'$'HADOOP_HOME/sbin >> ~/.bashrc"
 echo $HADOOP_USER_PASSWORD | sudo -S bash -c 'source conf/config.sh && echo "export PATH" >> ~/.bashrc'
 
-printf "<<<< done. \n\n"
+printf "<<<< 6. done. \n\n"
