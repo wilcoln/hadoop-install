@@ -16,7 +16,8 @@ echo $HADOOP_USER_PASSWORD | sudo -S bash -c 'cat conf/hosts >> /etc/hosts'
 
 printf "<<<< 1. done. \n\n"
 
-# 2. Configuring SSH
+# 2. Installing & Configuring SSH
+echo $HADOOP_USER_PASSWORD | sudo -S apt install openssh-server openssh-client -y
 echo ">>>> 2. Enabling SSH paswordless connection... <<<<"
 
 ssh-keygen -t rsa -f ~/.ssh/id_rsa # generate ssh key for the node
