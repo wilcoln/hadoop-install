@@ -19,8 +19,7 @@ On all nodes of the cluster, run
 
 # Install and Run with Default
 ```
-sudo apt install git
-git clone https://github.com/wilcoln/hadoop-install.git
-cd  ~/hadoop-install
-./install-hadoop.sh
+sudo apt install git  -y && 
+git clone https://github.com/wilcoln/hadoop-install.git && 
+cd  ~/hadoop-install && ./install-hadoop.sh
 ```
