@@ -19,7 +19,7 @@
 <configuration>
     <property>
     <name>dfs.replication</name>
-    <value>2</value>
+    <value>3</value>
     </property>
 
     <!-- keep this in master only -->
