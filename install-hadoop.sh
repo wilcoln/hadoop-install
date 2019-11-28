@@ -53,6 +53,7 @@ echo ">>>> 5. Configuring Hadoop... <<<<"
 
 echo $HADOOP_USER_PASSWORD | sudo -S bash -c 'source conf/config.sh && echo "export JAVA_HOME=$JAVA_HOME" >> $HADOOP_PARENT_DIR/hadoop-3.2.1/etc/hadoop/hadoop-env.sh'
 echo $HADOOP_USER_PASSWORD | sudo -S cp conf/hadoop/* $HADOOP_PARENT_DIR/hadoop-3.2.1/etc/hadoop/
+echo $HADOOP_USER_PASSWORD | sudo -S chown hadoop $HADOOP_PARENT_DIR/hadoop-3.2.1
 
 printf "<<<< 5. done. \n\n"
 
@@ -69,7 +70,6 @@ echo $HADOOP_USER_PASSWORD | sudo -S bash -c 'source conf/config.sh && echo "HAD
 ## Update and export PATH
 echo $HADOOP_USER_PASSWORD | sudo -S bash -c "source conf/config.sh && echo PATH='$'PATH:'$'HADOOP_HOME/bin:'$'HADOOP_HOME/sbin >> ~/.bashrc"
 echo $HADOOP_USER_PASSWORD | sudo -S bash -c 'source conf/config.sh && echo "export PATH" >> ~/.bashrc'
-echo $HADOOP_USER_PASSWORD | sudo -S chown hadoop /usr/local/hadoop-3.2.1
-
+## Load bash profile changes into current terminal session
 source ~/.bashrc
 printf "<<<< 6. done. \n\n"
