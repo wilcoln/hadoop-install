@@ -1,4 +1,4 @@
-# 1. Download the scripts
+# 1. Download this script
 
 ```
 sudo apt install git  -y && 
