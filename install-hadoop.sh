@@ -69,6 +69,7 @@ echo $HADOOP_USER_PASSWORD | sudo -S bash -c 'source conf/config.sh && echo "HAD
 ## Update and export PATH
 echo $HADOOP_USER_PASSWORD | sudo -S bash -c "source conf/config.sh && echo PATH='$'PATH:'$'HADOOP_HOME/bin:'$'HADOOP_HOME/sbin >> ~/.bashrc"
 echo $HADOOP_USER_PASSWORD | sudo -S bash -c 'source conf/config.sh && echo "export PATH" >> ~/.bashrc'
+echo $HADOOP_USER_PASSWORD | sudo -S chown hadoop /usr/local/hadoop-3.2.1
 
 source ~/.bashrc
 printf "<<<< 6. done. \n\n"
